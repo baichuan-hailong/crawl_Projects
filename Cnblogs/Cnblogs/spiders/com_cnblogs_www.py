@@ -3,6 +3,7 @@ import scrapy
 from scrapy.http import Request
 from Cnblogs.items import DocItem
 from scrapy.selector import Selector
+from scrapy.http import HtmlResponse
 
 
 class ComCnblogsWwwSpider(scrapy.Spider):
@@ -12,14 +13,15 @@ class ComCnblogsWwwSpider(scrapy.Spider):
 
     
 
+    def start_requests(self):
+    	for i in range(1,200):
+    		yield Request('http://www.cnblogs.com/'+'#p'+str(i), callback=self.parse_cate,dont_filter=True)
+    		# print(i)
+    		print('http://www.cnblogs.com/'+'#p'+str(i))
+
 
     def parse(self, response):
-    	for i in range(1,200):
-    		# print(i)
-    		# print(response.url+'#p'+str(i))
-    		yield Request(response.url+'#p'+str(i), callback=self.parse_cate,dont_filter=True)
-
-	    	# print('###################################################################')
+	    	print('###################################################################')
 	    	# print(response.url)
 	    	# print('###################################################################')
 	    	# print(response.body)
@@ -32,9 +34,15 @@ class ComCnblogsWwwSpider(scrapy.Spider):
     	print('##################----------------######################################')
     	for div in response.xpath('/html/body/div[@id]/div[@id]/div[@id]/div[@class]').extract():
     		data = {}
+    		# data['title'] = Selector(text=div).xpath('//div/div/h3/a/@href').extract()[0]
+    		# data['title'] = div.xpath('/div/div/h3/a/@href')
+    		# data['title'] = response.xpath('/html/body/div[@id]/div[@id]/div[@id]/div[@class][1]/div[@class]/h3/a[@class]/text()').extract()[0]
+    		data['title'] = Selector(text=div).xpath('//h3/a/text()').extract()
     		print(data)
-            # data['title'] = Selector(div).xpath('//div[1]/div[@class]/h3/a[@class]/text()').extract()[0]
+
             # data['detail_url'] = Selector(text=div).xpath('//div/@href').extract()[0]
+            
+
             
 
         	
