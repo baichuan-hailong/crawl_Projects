@@ -42,6 +42,6 @@ class CnSxzfcgWwwSpider(scrapy.Spider):
 
         
 
-        if (int(nextPage) < 20):
+        if (int(nextPage) < int(totalPage)):
             yield scrapy.Request(next_url, callback=self.parse,dont_filter=True)
         # pass
