@@ -27,10 +27,11 @@ class ComNjhwzbbWwwSpider(scrapy.Spider):
         if response.url == 'http://www.njhwzbb.com/app/index/column/indexColumnBidAnnounce.html?currentCode=4100000&parentCode=102300&childCode=102320&time=1503998651':
             # pass
             type = '招标公告'
-        print(type)
+        # print(type)
 
+        # print(response.xpath('html/body/text()').extract())
         # /html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']/div[@class='right-content-list'][1]/div[@class='right-content-left']
-        print(response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']"))
+        # print(response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']"))
         # right-content-right
         # title = response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']/div[@class='right-content-list']/div[@class='right-content-left']")
         # print(title)
