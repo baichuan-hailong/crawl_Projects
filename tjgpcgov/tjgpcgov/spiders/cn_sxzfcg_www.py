@@ -59,8 +59,8 @@ class CnSxzfcgWwwSpider(scrapy.Spider):
         # print(next_url)
         # print('-----------------------------------------------')
 
-        # if (int(nextPage) < int(totalPage)):
-        #     yield scrapy.Request(next_url, callback=self.parse,dont_filter=True)
+        if (int(nextPage) < int(totalPage)):
+            yield scrapy.Request(next_url, callback=self.parse,dont_filter=True)
 
     def parse_item(self, response):
         print('@_______________@')
