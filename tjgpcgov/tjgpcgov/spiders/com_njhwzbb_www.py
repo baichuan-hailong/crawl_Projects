@@ -30,7 +30,7 @@ class ComNjhwzbbWwwSpider(scrapy.Spider):
         print(type)
 
         # /html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']/div[@class='right-content-list'][1]/div[@class='right-content-left']
-        print(response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']/div[@class='right-content-list']/div[@class='right-content-left']").extract())
+        print(response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']"))
         # right-content-right
         # title = response.xpath("/html/body/div/div[@id='BidSupervisionPage']/div[@class='bidSupervisionSection']/div[@class='bidSupervisionMain']/div[@id='conter']/div[@id='help-right']/div[@class='right-content-list-box']/div[@class='right-content-list']/div[@class='right-content-left']")
         # print(title)
