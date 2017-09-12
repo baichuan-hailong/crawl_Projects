@@ -9,7 +9,6 @@ import re
 
 class CnComJszbWwwSpider(scrapy.Spider):
 	# 江苏省建设工程招标网
-
     name = "cn.com.jszb.www"
     allowed_domains = ["www.jszb.com.cn"]
     # start_urls = ['http://www.jszb.com.cn/jszb/YW_info/ZhaoBiaoGG/MoreInfo_ZBGG.aspx?categoryNum=012',]
